@@ -1,0 +1,27 @@
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="{{path('home')}}">La Boutique</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Nos produits</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Qui sommes-nous?</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+            {% if app.user %}
+                <a href="#" class="btn btn-secondary"><small title="Mon Compte">{{app.user.firstname}}</small></a> | <a href="#" class="btn btn-dark"> <i class="fas fa-sign-out-alt" title="Déconnexion"></i> </a>
+            {% else %}
+                <a href="#" class="btn btn-secondary"><i class="fas fa-sign-in-alt" title="Connexion"></i></a> | <a href="#" class="btn btn-dark"><i class="fas fa-user-edit" title="Inscription"></i></a>
+            {% endif %}
+        </div>
+    </nav>
+</header>
