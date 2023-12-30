@@ -10,9 +10,10 @@
         <main role="main">
             {% block body %}   
                 <br><br>
-                <div class="container marketing">
-                    {% block content %}
-                    {% endblock %}
+                <div class="container marketing 
+                    {% if block('carousel') is not defined %}mt-5{% endif %}
+                    ">
+                        {% block content %}{% endblock %}
                 </div>
             {% endblock %}
         </main>
